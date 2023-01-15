@@ -136,7 +136,8 @@ int main()
 		printf("Escolha uma opção do menu: \n\n"); 
 		printf("\t1- Registrar  \n"); // "\t" para criar um paragráfo
 		printf("\t2- Consultar \n");
-		printf("\t3- Deletar \n\n");
+		printf("\t3- Deletar \n");
+		printf("\t4- Sair do sistema \n\n");
 	
 		printf("Opção: "); 
 		scanf("%d", &opcao); 
@@ -155,6 +156,11 @@ int main()
 		
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("\t Obrigado por utilizar nosso sistema! \n\n");
+			return 0;
 			break;
 		
 			default: // não esquecer os dois pontos (:) para validar o default
