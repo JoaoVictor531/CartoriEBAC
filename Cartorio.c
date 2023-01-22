@@ -125,47 +125,78 @@ int main()
 {
 	int opcao=0; // váriaveis não podem ter acentos 
 	int laco=1;
+	char senha[10]="a";
+	int comparacao;
+	int x=2;
 	
-	for (laco=1;laco=1;)
+	
+	
+	
+	for(x=2; x=2;)
 	{
 		system("cls");
 		
 		setlocale(LC_ALL, "Portuguese");
 	
-		printf("\t### Cartório da EBAC ###\n\n"); // não iniciar comandos com letra maiúscula!
-		printf("Escolha uma opção do menu: \n\n"); 
-		printf("\t1- Registrar  \n"); // "\t" para criar um paragráfo
-		printf("\t2- Consultar \n");
-		printf("\t3- Deletar \n");
-		printf("\t4- Sair do sistema \n\n");
+		printf("\t### Cartório da EBAC ### \n\n");
+		printf("Login de Administrador!\n\nDigite sua senha: ");
+		scanf("%s", &senha);
 	
-		printf("Opção: "); 
-		scanf("%d", &opcao); 
-
-		system("cls"); // Para limpar (trocar de tela)
+		comparacao = strcmp(senha, "Joao"); // senho do login
 	
-		switch (opcao) // não esquecer de indicar a variável após escrever o comando switch
+		if(comparacao == 0)
 		{
-			case 1:
-			registrar();
-			break;
 		
-			case 2:
-			consultar();
-			break;
+			for (laco=1;laco=1;)
+			{	
+				system("cls");
 		
-			case 3:
-			deletar();
-			break;
+				setlocale(LC_ALL, "Portuguese");
+	
+				printf("\t### Cartório da EBAC ###\n\n"); // não iniciar comandos com letra maiúscula!
+				printf("Escolha uma opção do menu: \n\n"); 
+				printf("\t1- Registrar  \n"); // "\t" para criar um paragráfo
+				printf("\t2- Consultar \n");
+				printf("\t3- Deletar \n\n");
+				printf("\t4- Sair do sistema \n\n");
+		
+				printf("Opção: "); 
+				scanf("%d", &opcao); 
+
+				system("cls"); // Para limpar (trocar de tela)
+	
+				switch (opcao) // não esquecer de indicar a variável após escrever o comando switch
+				{	
+					case 1:
+					registrar();
+					break;
+		
+					case 2:
+					consultar();
+					break;
+		
+					case 3:
+					deletar();
+					break;
 			
-			case 4:
-			printf("\t Obrigado por utilizar nosso sistema! \n\n");
-			return 0;
-			break;
+					case 4:
+					printf("\t Obrigado por utilizar nosso sistema! \n\n");
+					return 0;
+					break;
 		
-			default: // não esquecer os dois pontos (:) para validar o default
-			printf("Esta opção não está disponivel!\n\n");
-			system("pause");
-		} 						// fim switch
-	}							// fim do laço	
-} 								// fim da main
+					default: // não esquecer os dois pontos (:) para validar o default
+					printf("Esta opção não está disponivel!\n\n");
+					system("pause");
+				} 						// fim switch
+			}							// fim do laço 	
+		}								// fim do if login
+		else
+		printf("\nSenha inválida! Tente novamente. \n\n");
+		system("pause");
+	} 									// fim do laço 2
+} 										// fim da main
+
+
+
+
+
